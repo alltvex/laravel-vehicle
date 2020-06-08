@@ -2,9 +2,6 @@
 
 namespace Axterisko\Vehicle\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Axterisko\Vehicle\Models\VehicleModel;
 
@@ -34,10 +31,10 @@ class ModelsController extends Controller
      */
     public function models($make)
     {
-    	$models = $this->model->byMake($make)->orderBy('name')->get(['id', 'name', 'class']);
+        $models = $this->model->byMake($make)->orderBy('name')->get(['id', 'name', 'class']);
 
-    	return response()->json([
-    		'models' => $models
-    	]);
+        return response()->json([
+            'models' => $models
+        ]);
     }
 }

@@ -58,6 +58,10 @@ Then run migrations.
 
 	php artisan migrate
 
+Then run
+
+    composer dump-autoload
+
 Then the vehicle seeder.
 
 	php artisan db:seed --class VehicleTablesSeeder
@@ -102,7 +106,6 @@ class Vehicle extends Model implements HasMakeContract, HasModelContract, HasMod
 	 *
 	 * @return mixed
 	 */public function modelYear(){
- // TODO: Implement modelYear() method.
 }
 ```
 
@@ -161,31 +164,31 @@ This is an example. You can structure these routes as you want.
 
 // Show make list
 Route::get('api/vehicles/makes', [
-	'uses' => 'Axterisko\Vehicle\Controllers\MakesController@makes',
+	'uses' => '\Axterisko\Vehicle\Controllers\MakesController@makes',
 	'as' => 'api.vehicles.makes'
 ]);
 
 // Show make models list
 Route::get('api/vehicles/{make}/models', [
-	'uses' => 'Axterisko\Vehicle\Controllers\ModelsController@models',
+	'uses' => '\Axterisko\Vehicle\Controllers\ModelsController@models',
 	'as' => 'api.vehicles.models'
 ]);
 
 // Show model years list
 Route::get('api/vehicles/{make}/{model}/years', [
-	'uses' => 'Axterisko\Vehicle\Controllers\ModelYearsController@years',
+	'uses' => '\Axterisko\Vehicle\Controllers\ModelYearsController@years',
 	'as' => 'api.vehicles.years'
 ]);
 
 // Show vehicles list
 Route::get('api/vehicles/{make}/{model}/{year}/vehicles', [
-	'uses' => 'Axterisko\Vehicle\Controllers\VehiclesController@vehicles',
+	'uses' => '\Axterisko\Vehicle\Controllers\VehiclesController@vehicles',
 	'as' => 'api.vehicles.vehicles'
 ]);
 
 // Show vehicle details
 Route::get('api/vehicles/{vehicle}/vehicle', [
-	'uses' => 'Axterisko\Vehicle\Controllers\VehiclesController@vehicle',
+	'uses' => '\Axterisko\Vehicle\Controllers\VehiclesController@vehicle',
 	'as' => 'api.vehicles.vehicle'
 ]);
 ```
