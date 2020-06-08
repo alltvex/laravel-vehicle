@@ -1,17 +1,17 @@
 {
-    "name": "fruitware/vehicle",
-    "license": "BSD",
-    "description": "Laravel 5.2 package to work with vehicles data.",
+    "name": "axterisko/laravel-vehicle",
+    "license": "MIT",
+    "description": "Laravel package to work with vehicles data.",
     "authors": [
         {
-            "name": "Gerardo Báez",
-            "email": "gerardojbaez@gmail.com"
+            "name": "Alex Pettiti",
+            "email": "alex.pettiti@axterisko.it",
+            "homepage": "www.axterisko.it"
         }
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": "^7.2",
-        "illuminate/database": "6.1.*",
+        "illuminate/support": "~5|~6|~7",
         "ext-json": "*"
     },
     "autoload": {
