@@ -1,7 +1,7 @@
-# Vehicles Data for Laravel 5.2
+# Vehicles Data for Laravel
 
 This package allows you to work with vehicles makes, models, years and other details in
-Laravel 5.2.
+Laravel.
 
 ##### Where the data come from?
 
