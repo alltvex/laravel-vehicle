@@ -1,12 +1,12 @@
 <?php
 
-namespace Fruitware\Vehicle\Controllers;
+namespace Axterisko\Vehicle\Controllers;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Fruitware\Vehicle\Models\VehicleMake;
+use Axterisko\Vehicle\Models\VehicleMake;
 
 class MakesController extends Controller
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Fruitware\Vehicle\Contracts;
+namespace Axterisko\Vehicle\Contracts;
 
 interface VehicleMake
 {

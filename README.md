@@ -27,21 +27,10 @@ CSV files). The list is updated and validated against some industry standards.
 
 ### Composer
 
-Pull this package through Composer (file `composer.json`)
-
-```js
-{
-    "require": {
-        "php": ">=5.5.9",
-        "laravel/framework": "5.2.*",
-        "gerardojbaez/vehicle": "1.*"
-    }
-}
-```
 
 Run this command inside your terminal.
 
-	composer update
+	composer rquire larave-vehicle
 
 ### Service Provider
 Add the package to your application service providers in config/app.php file.
@@ -55,7 +44,7 @@ Add the package to your application service providers in config/app.php file.
  /**
   * Third Party Service Providers...
   */
- 'Gerardojbaez\Vehicle\VehicleServiceProvider',
+ 'Axterisko\Vehicle\VehicleServiceProvider',
 ]
 ```
 
@@ -63,18 +52,18 @@ Add the package to your application service providers in config/app.php file.
 
 Publish package config file, migrations and seeders with the command:
 
-	php artisan vendor:publish
-	
+	php artisan vendor:publish laravel-vehicle
+
 Then run migrations.
 
 	php artisan migrate
-	
+
 Then the vehicle seeder.
 
 	php artisan db:seed --class VehicleTablesSeeder
-	
+
 ### Traits and Contracts
-When one of your models has make, model, model year and/or a vehicle you can add the required relations with the traits. 
+When one of your models has make, model, model year and/or a vehicle you can add the required relations with the traits.
 
 See the following example:
 
@@ -84,14 +73,14 @@ See the following example:
 namespace App\Models;
 
 // [...]
-use Gerardojbaez\Vehicle\Contracts\HasMake as HasMakeContract;
-use Gerardojbaez\Vehicle\Contracts\HasModel as HasModelContract;
-use Gerardojbaez\Vehicle\Contracts\HasModelYear as HasModelYearContract;
-use Gerardojbaez\Vehicle\Contracts\HasVehicle as HasVehicleContract;
-use Gerardojbaez\Vehicle\Traits\HasMake;
-use Gerardojbaez\Vehicle\Traits\HasModel;
-use Gerardojbaez\Vehicle\Traits\HasModelYear;
-use Gerardojbaez\Vehicle\Traits\HasVehicle;
+use Axterisko\Vehicle\Contracts\HasMake as HasMakeContract;
+use Axterisko\Vehicle\Contracts\HasModel as HasModelContract;
+use Axterisko\Vehicle\Contracts\HasModelYear as HasModelYearContract;
+use Axterisko\Vehicle\Contracts\HasVehicle as HasVehicleContract;
+use Axterisko\Vehicle\Traits\HasMake;
+use Axterisko\Vehicle\Traits\HasModel;
+use Axterisko\Vehicle\Traits\HasModelYear;
+use Axterisko\Vehicle\Traits\HasVehicle;
 
 class Vehicle extends Model implements HasMakeContract, HasModelContract, HasModelYearContract, HasVehicleContract
 {
@@ -123,11 +112,11 @@ class Vehicle extends Model implements HasMakeContract, HasModelContract, HasMod
 
 ### The CSV file
 
-All data is stored in a CSV file. This is done so it's easy to manage. 
+All data is stored in a CSV file. This is done so it's easy to manage.
 
 File structure:
 
-| Make 		| Model			   	| Year | cylinders	| displacement	| drive				| transmission				| class 		| 
+| Make 		| Model			   	| Year | cylinders	| displacement	| drive				| transmission				| class 		|
 | --------- | ----------------- | ---- | ---------- | ------------- | ----------------- | ------------------------- | ------------- |
 | Acura	    | ILX				| 2017 | 4			| 2.4 			| Front-Wheel Drive | 8-Speed Automated Manual	| Compact Cars	|
 
@@ -147,19 +136,19 @@ When you have done, run:
 
 ### Models
 
-This package comes with `Gerardojbaez\Vehicle\Models\VehicleMake`,
-`Gerardojbaez\Vehicle\Models\VehicleModel`,
-`Gerardojbaez\Vehicle\Models\VehicleModelYear` and
-`Gerardojbaez\Vehicle\Models\Vehicle` models.
+This package comes with `Axterisko\Vehicle\Models\VehicleMake`,
+`Axterisko\Vehicle\Models\VehicleModel`,
+`Axterisko\Vehicle\Models\VehicleModelYear` and
+`Axterisko\Vehicle\Models\Vehicle` models.
 
 For more information please take a look at each model.
 
 ### Controllers
 It's more likely that you will want to retrieve makes, models and years from your frontend (via ajax for example); we have created these basic controllers for you:
-`Gerardojbaez\Vehicle\Controllers\MakesController`, 
-`Gerardojbaez\Vehicle\Controllers\ModelsController`, 
-`Gerardojbaez\Vehicle\Controllers\ModelYearsController`, 
-`Gerardojbaez\Vehicle\Controllers\VehicleController`. You can use these directly or extends with your own.
+`Axterisko\Vehicle\Controllers\MakesController`,
+`Axterisko\Vehicle\Controllers\ModelsController`,
+`Axterisko\Vehicle\Controllers\ModelYearsController`,
+`Axterisko\Vehicle\Controllers\VehicleController`. You can use these directly or extends with your own.
 
 Controllers returns a json reponse containing (if any) the requested data.
 
@@ -172,31 +161,31 @@ This is an example. You can structure these routes as you want.
 
 // Show make list
 Route::get('api/vehicles/makes', [
-	'uses' => 'Gerardojbaez\Vehicle\Controllers\MakesController@makes',
+	'uses' => 'Axterisko\Vehicle\Controllers\MakesController@makes',
 	'as' => 'api.vehicles.makes'
 ]);
 
 // Show make models list
 Route::get('api/vehicles/{make}/models', [
-	'uses' => 'Gerardojbaez\Vehicle\Controllers\ModelsController@models',
+	'uses' => 'Axterisko\Vehicle\Controllers\ModelsController@models',
 	'as' => 'api.vehicles.models'
 ]);
 
 // Show model years list
 Route::get('api/vehicles/{make}/{model}/years', [
-	'uses' => 'Gerardojbaez\Vehicle\Controllers\ModelYearsController@years',
+	'uses' => 'Axterisko\Vehicle\Controllers\ModelYearsController@years',
 	'as' => 'api.vehicles.years'
 ]);
 
 // Show vehicles list
 Route::get('api/vehicles/{make}/{model}/{year}/vehicles', [
-	'uses' => 'Gerardojbaez\Vehicle\Controllers\VehiclesController@vehicles',
+	'uses' => 'Axterisko\Vehicle\Controllers\VehiclesController@vehicles',
 	'as' => 'api.vehicles.vehicles'
 ]);
 
 // Show vehicle details
 Route::get('api/vehicles/{vehicle}/vehicle', [
-	'uses' => 'Gerardojbaez\Vehicle\Controllers\VehiclesController@vehicle',
+	'uses' => 'Axterisko\Vehicle\Controllers\VehiclesController@vehicle',
 	'as' => 'api.vehicles.vehicle'
 ]);
 ```

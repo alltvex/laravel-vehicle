@@ -1,6 +1,6 @@
 <?php
 
-namespace Fruitware\Vehicle\Commands;
+namespace Axterisko\Vehicle\Commands;
 
 use Illuminate\Console\Command;
 

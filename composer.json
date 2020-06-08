@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Fruitware\\Vehicle\\": "src/Vehicle/"
+            "Axterisko\\Vehicle\\": "src/Vehicle/"
         }
     }
 }

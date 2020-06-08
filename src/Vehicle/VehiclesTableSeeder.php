@@ -1,10 +1,10 @@
 <?php
 
-namespace Fruitware\Vehicle;
+namespace Axterisko\Vehicle;
 
 use DB;
 use Illuminate\Database\Seeder;
-use Fruitware\Vehicle\Models\Vehicle;
+use Axterisko\Vehicle\Models\Vehicle;
 
 class VehiclesTableSeeder extends Seeder
 {

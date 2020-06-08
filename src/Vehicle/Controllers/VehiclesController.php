@@ -1,12 +1,12 @@
 <?php
 
-namespace Fruitware\Vehicle\Controllers;
+namespace Axterisko\Vehicle\Controllers;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Fruitware\Vehicle\Models\Vehicle;
+use Axterisko\Vehicle\Models\Vehicle;
 
 class VehiclesController extends Controller
 {

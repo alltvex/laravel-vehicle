@@ -1,6 +1,6 @@
 <?php
 
-namespace Fruitware\Vehicle\Traits;
+namespace Axterisko\Vehicle\Traits;
 
 trait HasMake
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Fruitware\Vehicle;
+namespace Axterisko\Vehicle;
 
 use Illuminate\Database\Seeder;
-use Fruitware\Vehicle\Models\VehicleModelYear;
+use Axterisko\Vehicle\Models\VehicleModelYear;
 
 class VehicleModelYearsTableSeeder extends Seeder
 {

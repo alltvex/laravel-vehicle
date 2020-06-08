@@ -1,6 +1,6 @@
 <?php
 
-namespace Fruitware\Vehicle;
+namespace Axterisko\Vehicle;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -12,8 +12,8 @@ class VehicleServiceProvider extends ServiceProvider
      * @var array
      */
     protected $commands = [
-        'Fruitware\Vehicle\Commands\GenerateVehiclesData',
-        'Fruitware\Vehicle\Commands\ExportVehiclesData',
+        'Axterisko\Vehicle\Commands\GenerateVehiclesData',
+        'Axterisko\Vehicle\Commands\ExportVehiclesData',
     ];
 
     /**
@@ -24,16 +24,10 @@ class VehicleServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/vehicles.php' => config_path('vehicles.php')
-        ], 'config');
-
-        $this->publishes([
-            __DIR__.'/../database/migrations/' => database_path('migrations')
-        ], 'migrations');
-
-        $this->publishes([
+            __DIR__.'/../config/vehicles.php' => config_path('vehicles.php'),
+            __DIR__.'/../database/migrations/' => database_path('migrations'),
             __DIR__.'/../database/seeds/VehicleTablesSeeder.php' => database_path('seeds/VehicleTablesSeeder.php')
-        ], 'seeds');
+        ], 'laravel-vehicle');
     }
 
     /**

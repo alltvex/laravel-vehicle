@@ -1,9 +1,9 @@
 <?php
 
-namespace Fruitware\Vehicle\Models;
+namespace Axterisko\Vehicle\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Fruitware\Vehicle\Contracts\VehicleModelYear as VehicleModelYearContract;
+use Axterisko\Vehicle\Contracts\VehicleModelYear as VehicleModelYearContract;
 
 class VehicleModelYear extends Model implements VehicleModelYearContract
 {

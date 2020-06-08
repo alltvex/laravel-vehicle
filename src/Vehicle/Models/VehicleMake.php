@@ -1,9 +1,9 @@
 <?php
 
-namespace Fruitware\Vehicle\Models;
+namespace Axterisko\Vehicle\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Fruitware\Vehicle\Contracts\VehicleMake as VehicleMakeContract;
+use Axterisko\Vehicle\Contracts\VehicleMake as VehicleMakeContract;
 
 class VehicleMake extends Model implements VehicleMakeContract
 {
