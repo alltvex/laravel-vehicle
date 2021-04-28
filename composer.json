@@ -1,5 +1,5 @@
 {
-    "name": "axterisko/laravel-vehicle",
+    "name": "alltvex/laravel-vehicle",
     "license": "MIT",
     "description": "Laravel package to work with vehicles data.",
     "authors": [
@@ -18,7 +18,7 @@
         "sempro/phpunit-pretty-print": "^1.0"
     },
     "require": {
-        "illuminate/support": "~5|~6|~7",
+        "illuminate/support": "~5|~6|~7|~8",
         "ext-json": "*"
     },
     "autoload": {
